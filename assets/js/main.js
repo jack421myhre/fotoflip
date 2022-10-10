@@ -6,7 +6,8 @@ const app = Vue.createApp({
             imageOne: './assets/images/michael-mouritz-unsplash.jpg',
             artistTwo: 'by Rachel',
             titleTwo: 'Plaidweather',
-            imageTwo: './assets/images/daniel-j-schwarz-unsplash.jpg'
+            imageTwo: './assets/images/daniel-j-schwarz-unsplash.jpg',
+            inStock: true,
         };
     }
 });
