@@ -24,3 +24,15 @@ img {
     align-items: center;
 }
 
+.availablePrints {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.availablePrints li {
+    list-style-type: none;
+    font-size: 1.5em;
+
+}
+

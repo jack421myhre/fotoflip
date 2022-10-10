@@ -19,35 +19,45 @@
         <div class="gallery-display">
             <div class="artist-container">
                 <div class="photo-title">
-                    <h2>{{titleOne}}</h2>
+                    <h2>{{ titleOne }}</h2>
                 </div>
                 <div class="artist-name">
-                    <p>{{artistOne}}</p>
+                    <p>{{ artistOne }}</p>
                 </div>
                 <div class="photo">
                     <img v-bind:src="imageOne" alt="">
                 </div>
                 <div class="stock-level">
-                    <p v-if="inStock">In Stock</p>
+                    <p v-if="inventory >= 10">In Stock</p>
+                    <p v-else-if="inventory < 10 && inventory > 0">Almost out!</p>
                     <p v-else>Out of Stock</p>
                 </div>
             </div>
             <div class="artist-container">
                 <!-- v-bind shorthand  -->
                 <div class="photo-title">
-                    <h2>{{titleTwo}}</h2>
+                    <h2>{{ titleTwo }}</h2>
                 </div>
                 <div class="artist-name">
-                    <p>{{artistTwo}}</p>
+                    <p>{{ artistTwo }}</p>
                 </div>
                 <div class="photo">
                     <img :src="imageTwo" alt="">
                 </div>
                 <div class="stock-level">
-                    <p v-if="inStock">In Stock</p>
-                    <p v-else>Out of Stock</p>
+                    <!-- Only shows on page if true -->
+                    <p v-show="inventory >= 10">In Stock</p>
+                    <p v-if="inventory < 10 && inventory > 0">Almost out!</p>
+                    <p v-show="inventory == 0">Out of Stock</p>
                 </div>
             </div>
+        </div>
+        <div class="availablePrints">
+            <ul>
+                <li v-for="print in prints" :key="print.id">
+                    {{ print.id }}: {{ print.available }}
+                </li>
+            </ul>
         </div>
     </div>
 
